@@ -1,67 +1,62 @@
-# Sales Council Agent Skill
+# Outbound Council
 
-Expert sales council with 6 advisors for pricing, persuasion, negotiation, copywriting, and pitch strategies.
+Sales research and outreach toolkit powered by Claude Code. Research fire/EMS departments, find contacts, write personalized cold emails scored by 6 expert advisors.
 
-## Advisors
+## For Sales Reps
 
-- **Robert Cialdini** - Psychology of persuasion
-- **Alex Hormozi** - Offers, pricing, business model
-- **Neil Rackham** - Discovery conversations
-- **Chris Voss** - Negotiation and objections
-- **Oren Klaff** - Frame control and pitch
-- **Eugene Schwartz** - Copywriting and messaging
+**[Open the setup guide](rep-kit/onboarding.html)** to get started. Download this repo, open the HTML file in your browser, and follow the steps. 15 minutes to set up.
 
-## Installation
-
-### npx skills add (recommended)
-```bash
-npx skills add antonioc-cl/sales-council
-```
-
-### Claude Code
-```bash
-/plugin add https://github.com/antonioc-cl/sales-council
-```
-
-### Claude.ai
-Upload the `sales-council` folder or add via skills panel.
-
-## Usage
-
-Activate when you need help with:
-
-- Pricing strategy and offer design
-- Sales conversations and discovery calls
-- Negotiation and handling objections
-- Pitch presentations and frame control
-- Landing page copy and messaging
-- Marketing copy and advertising text
-
-### Example Prompts
-
-```
-Use sales-council to help me structure pricing for my SaaS
-Use sales-council to write copy for my landing page
-Use sales-council to prepare for a negotiation call
-Use sales-council to design an irresistible offer
-```
+What you get:
+- Research any fire/EMS department by name. Claude finds the chief, medical director, training officer, fleet data, and recent news.
+- Write cold emails in YOUR voice, scored by 6 sales advisors (Cialdini, Hormozi, Klaff, Voss, Rackham, Schwartz).
+- Built-in AI slop detection. No "I hope this finds you well." No "Best regards." No em dashes. Your emails sound human.
+- Objection handling and follow-up sequences for when departments reply.
+- Automatic pricing calculations based on department size and intubation volume.
+- Institutional knowledge that compounds over time (learnings.md).
 
 ## Structure
 
 ```
-sales-council/
-├── SKILL.md              # Main skill instructions
-├── LICENSE               # MIT License
-├── README.md             # This file
-└── references/           # Detailed advisor profiles
-    ├── cialdini.md
-    ├── hormozi.md
-    ├── rackham.md
-    ├── voss.md
-    ├── klaff.md
-    └── schwartz.md
+outbound-council/
+├── rep-kit/
+│   ├── onboarding.html        ← Start here. Setup guide for reps.
+│   ├── CLAUDE.md              ← Project instructions (copy to root)
+│   └── ONBOARDING.md          ← Text version of the setup guide
+├── references/
+│   ├── anti-ai-slop.md        ← Banned AI words/phrases/patterns
+│   ├── objections-and-replies.md ← Reply handling, follow-ups, competitive intel
+│   ├── schwartz.md            ← Copywriting and awareness levels
+│   ├── hormozi.md             ← Offers, pricing, irresistible deals
+│   ├── klaff.md               ← Frame control, authority, pitch
+│   ├── cialdini.md            ← Persuasion psychology, social proof
+│   ├── voss.md                ← Negotiation, empathy, calibrated questions
+│   ├── rackham.md             ← SPIN selling, discovery conversations
+│   ├── physician-founder-frame.md  ← IntuBlade-specific selling angle
+│   ├── public-safety-buyer.md      ← Fire/EMS buyer psychology
+│   └── deployment-kit-psychology.md ← Free kit offer structure
+├── voices/
+│   └── voice-template.md      ← Fill this out with your writing style
+├── learnings.md               ← Accumulates knowledge over time
+├── SKILL.md                   ← Claude Code skill definition
+└── LICENSE
 ```
+
+## Quick Start (for reps)
+
+```bash
+git clone https://github.com/napiermd/outbound-council.git ~/outbound-council
+cp ~/outbound-council/rep-kit/CLAUDE.md ~/outbound-council/CLAUDE.md
+cd ~/outbound-council && claude
+```
+
+Then type: "Research [department name] in [state]"
+
+## Requirements
+
+- Claude Pro subscription ($20/month) at [claude.ai](https://claude.ai)
+- Claude Code CLI: `npm install -g @anthropic-ai/claude-code`
+- Node.js 18+ (for npm)
 
 ## License
 
-MIT License - See LICENSE file for details.
+MIT
