@@ -596,29 +596,74 @@ Before ending a Claude session, always:
 
 ## PART 6: CRM / HUBSPOT
 
-IntuBlade uses HubSpot for deal tracking. After you send an email to a department,
-log it in HubSpot so the whole team can see pipeline status.
+IntuBlade uses HubSpot for deal tracking. ALL research and outreach activity
+MUST be logged to HubSpot. This is not optional.
 
-### What to log after every send
+### API access
 
-1. **Create or update the contact** in HubSpot with the chief's info
-2. **Create or update the company** (the department)
-3. **Log the email activity** on the contact record
-4. **Set the deal stage** to "Outreach Sent"
+Reps access HubSpot through the IntuBlade API gateway. The gateway handles
+authentication — reps just need their API key (`ib_xxx` prefix).
 
-### If you don't have HubSpot access
+**Base URL:** `https://veaatasbfcjrpcskqwyk.supabase.co/functions/v1`
+**Auth header:** `Authorization: Bearer {SUPABASE_ANON_KEY}`
+**Also required:** `apikey: {SUPABASE_ANON_KEY}`
 
-Ask Andrew. He'll give you access to the IntuBlade HubSpot workspace. Until
-then, keep a simple log in this format and share it with Andrew weekly:
+The rep's API key is in their `.env` file in the outbound-council folder.
+Andrew provides this during onboarding.
 
+### When to sync to HubSpot (EVERY time, not optional)
+
+| Event | What to do |
+|-------|-----------|
+| After researching a department | Sync lead to create/update HubSpot contact |
+| After creating a Gmail draft | Push update with action `contact_updated` |
+| After sending an email | Push update with action `status_changed` |
+| After detecting a reply | Push update with action `status_changed` |
+| After a wrong-person bounce | Push update — marks email invalid |
+
+### How to sync
+
+**Step 1: Create or update the HubSpot contact**
+```bash
+curl -s -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+  -H "apikey: $SUPABASE_ANON_KEY" \
+  -H "Content-Type: application/json" \
+  "https://veaatasbfcjrpcskqwyk.supabase.co/functions/v1/hubspot-sync-lead" \
+  -X POST -d '{"lead_id": "UUID"}'
 ```
-| Date | Department | Chief | Email | MD CC'd | Signal Used | Status |
-|------|-----------|-------|-------|---------|-------------|--------|
-| 2026-03-31 | Parma Fire | M. Lasky | firechief@cityofparma-oh.gov | Dr. Dussel | SAFER grant | Draft sent |
+
+**Step 2: Push research notes and status updates**
+```bash
+curl -s -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+  -H "apikey: $SUPABASE_ANON_KEY" \
+  -H "Content-Type: application/json" \
+  "https://veaatasbfcjrpcskqwyk.supabase.co/functions/v1/hubspot-push-update" \
+  -X POST -d '{"entity_type": "lead", "entity_id": "UUID", "action": "contact_updated"}'
 ```
 
-### When the rep says "log this to HubSpot"
+Actions: `contact_updated`, `status_changed`, `research_complete`
 
-If HubSpot MCP or API access is available, create/update the contact and
-company records. If not, generate the log row in the table format above
-so the rep can paste it into their tracking sheet.
+### Automatic behavior
+
+When you complete research on a department and the rep approves, you MUST:
+1. Sync the lead to HubSpot (`hubspot-sync-lead`)
+2. Push the contact update (`hubspot-push-update` with `contact_updated`)
+3. Tell the rep: "Synced to HubSpot."
+
+When the rep says "create the draft" and you create a Gmail draft, also push
+the status update to HubSpot.
+
+When checking replies and finding a real reply or wrong-person bounce, push
+the status update to HubSpot.
+
+**Do not ask the rep if they want to sync.** Just do it. Every time.
+
+### If the API key is not configured
+
+Tell the rep: "I need your IntuBlade API key to sync to HubSpot. Ask Andrew
+for your SUPABASE_ANON_KEY and add it to a .env file in this folder."
+
+Create the `.env` file template:
+```
+SUPABASE_ANON_KEY=your_key_here
+```
