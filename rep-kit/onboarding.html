@@ -721,7 +721,7 @@
             Copy
           </button>
         </div>
-        <pre>copy %USERPROFILE%\outbound-council\rep-kit\CLAUDE.md %USERPROFILE%\outbound-council\CLAUDE.md</pre>
+        <pre>copy $HOME\outbound-council\rep-kit\CLAUDE.md $HOME\outbound-council\CLAUDE.md</pre>
       </div>
     </div>
   </div>
@@ -785,10 +785,41 @@
     </details>
   </div>
 
-  <!-- STEP 6 -->
+  <!-- STEP 6: Auth -->
   <div class="step" data-step="6">
     <div class="step-header">
       <div class="step-number">6</div>
+      <div>
+        <div class="step-title">Sign in to Claude Code</div>
+        <div class="step-subtitle">1 minute. First time only.</div>
+      </div>
+    </div>
+
+    <p>The first time you run Claude Code, it needs to connect to your Claude account. Run this in your terminal:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>terminal</span>
+        <button class="copy-btn" onclick="copyCode(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <pre>cd ~/outbound-council && claude</pre>
+    </div>
+
+    <p style="margin-top:12px">Your browser will open and ask you to sign in with your Claude account. Sign in, click "Allow," and come back to the terminal. You'll see a chat interface. Type <code>/quit</code> to exit for now. We have one more setup step.</p>
+
+    <div class="callout info">
+      <span class="callout-icon">i</span>
+      <span>This only happens once. After you sign in the first time, Claude Code remembers your account.</span>
+    </div>
+  </div>
+
+  <!-- STEP 7: Gmail -->
+  <div class="step" data-step="7">
+    <div class="step-header">
+      <div class="step-number">7</div>
       <div>
         <div class="step-title">Connect your Gmail</div>
         <div class="step-subtitle">So Claude can create drafts directly in your inbox. No copy-pasting.</div>
@@ -824,10 +855,10 @@
     </details>
   </div>
 
-  <!-- STEP 7 -->
-  <div class="step" data-step="7" style="border-color: var(--green-dim); background: rgba(34, 197, 94, 0.03);">
+  <!-- STEP 8 -->
+  <div class="step" data-step="8" style="border-color: var(--green-dim); background: rgba(34, 197, 94, 0.03);">
     <div class="step-header">
-      <div class="step-number" style="background: var(--green);">7</div>
+      <div class="step-number" style="background: var(--green);">8</div>
       <div>
         <div class="step-title">Start Claude</div>
         <div class="step-subtitle">You're done with setup. This is how you work every day.</div>

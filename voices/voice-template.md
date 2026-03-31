@@ -7,14 +7,29 @@ Fill this out so Claude writes in YOUR voice, not generic AI output.
 **Name:**
 (Full name as it appears in your email signature)
 
+**Email address:**
+(The Gmail address you send outreach from)
+
+**Phone number:**
+(Direct number for your email signature, or leave blank)
+
 **Title / Role:**
 (What you actually call yourself. "Sales rep" is fine. Don't inflate it.)
 
 **Signature block:**
 (Exactly how you sign emails. Copy-paste from your email client.)
 
+**Calendar link:**
+(Your cal.com or Calendly link for booking calls. If you don't have one, leave blank and Andrew's link will be used: https://cal.com/andrewnapier/intublade-vl-deployment)
+
+**Territory / assigned states:**
+(Which states or regions are you covering? Ex: "Ohio" or "Texas and Oklahoma" or "All states")
+
 **Background in one sentence:**
-(What gives you credibility with the people you're emailing? Ex: "10 years in EMS equipment sales" or "Former paramedic, now selling the gear I wished I had")
+(What gives you credibility with the people you're emailing? If you're new and
+don't have an EMS/fire background, that's fine. Use something real about why you
+care: "I work with fire departments to get better airway equipment in the field"
+or even just "I'm on the IntuBlade team." Don't make something up.)
 
 ## How you write
 

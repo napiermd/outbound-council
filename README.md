@@ -20,8 +20,7 @@ What you get:
 outbound-council/
 ├── rep-kit/
 │   ├── onboarding.html        ← Start here. Setup guide for reps.
-│   ├── CLAUDE.md              ← Project instructions (copy to root)
-│   └── ONBOARDING.md          ← Text version of the setup guide
+│   └── CLAUDE.md              ← Project instructions (copy to root)
 ├── references/
 │   ├── anti-ai-slop.md        ← Banned AI words/phrases/patterns
 │   ├── objections-and-replies.md ← Reply handling, follow-ups, competitive intel

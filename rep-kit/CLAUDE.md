@@ -242,12 +242,14 @@ price per blade and the deployment kit offer. Get this right.
 |------|-----------------|-------------|-------|
 | Tier 1 | 1,000+ | $60 | Enterprise |
 | Tier 2 | 500-999 | $63 | High Volume |
-| Tier 2 | 200-499 | $70 | Growth |
-| Tier 3 | 50-199 | $78 | Standard |
+| Tier 2 | 200-499 | $70 | High Volume |
+| Tier 3 | 50-199 | $78 | Growth |
 | Tier 4 | Under 50 | $95 | Spot |
 
 **CRITICAL:** Tier 2 has TWO price points. 500+ intubations = $63. 200-499 = $70.
 Both are Tier 2 but pricing differs. Get the intubation count right.
+
+**CRITICAL:** Lower tier number = higher value. Tier 1 is the biggest departments.
 
 **Deployment kit offers by tier:**
 
@@ -258,7 +260,7 @@ Both are Tier 2 but pricing differs. Get the intubation count right.
 
 **Annual contract value (for context, don't put in the email):**
 - Calculate: intubations/year x price/blade = annual value
-- Example: Parma Fire, 108 intubations x $70/blade = $7,560/year
+- Example: Parma Fire, 108 intubations x $78/blade = $8,424/year (Tier 3 Growth)
 - This helps you prioritize which departments to research first
 
 **What to say about competitor pricing:**
@@ -292,9 +294,9 @@ a single-use video laryngoscope. USB-C, $X/blade. Rotate phrasing.]
 
 I'll send your department a deployment kit ([kit contents]) at no cost. Your
 crews try it, you decide. Here's what it looks like in the field:
-https://youtube.com/playlist?list=PLD0ZCbkFc8v6c665wroDcq0EtADVnjhgK
+[YouTube link from rep's voice file, default: https://youtube.com/playlist?list=PLD0ZCbkFc8v6c665wroDcq0EtADVnjhgK]
 
-https://cal.com/andrewnapier/intublade-vl-deployment
+[Calendar link from rep's voice file, default: https://cal.com/andrewnapier/intublade-vl-deployment]
 
 [Rep signature from voice file]
 ```
@@ -310,9 +312,9 @@ https://cal.com/andrewnapier/intublade-vl-deployment
 | Voss | Genuine closing question? Invites dialogue, not a close. |
 | Rackham | Opens a conversation? Don't try to close in cold outreach. |
 
-**Average < 6:** Full rewrite. Don't show it.
-**Average 6-8:** Fix weak spots, re-score, then show.
-**Average >= 8:** Show with minor suggestions.
+**Average < 7:** Full rewrite. Don't show it.
+**Average 7-8:** Show with specific improvement suggestions.
+**Average >= 8:** Show. Minor polish only.
 
 ### When the rep pastes their own email for scoring
 
@@ -442,3 +444,102 @@ Track what was sent in the conversation so you can reference it later
 **"What do we know about [hospital system / region / state]?"**
 → Check learnings.md for accumulated knowledge. Report what's there and
   what gaps exist.
+
+---
+
+## PART 5: ESCALATION AND EDGE CASES
+
+### When to escalate to Andrew
+
+| Situation | Action |
+|-----------|--------|
+| Tier 1 department (1,000+ intubations) replies with interest | Escalate immediately. Andrew handles enterprise. |
+| Medical director wants to discuss clinical data | Escalate. Andrew is the physician. |
+| Chief asks about custom pricing or volume contracts | Escalate. Andrew handles pricing negotiations. |
+| Someone threatens legal action or is hostile | Escalate. Do not respond. |
+| Press or media inquiry | Escalate. Andrew handles all press. |
+| Request for a product demo or site visit | Escalate. Andrew or the regional contact handles demos. |
+| Competitor-specific technical questions (specs, clearances) | Escalate if the rep doesn't know the answer. Don't guess. |
+
+For everything else, the rep handles it with the objection playbook.
+
+### When you can't find a verified email
+
+1. Check the department's general contact page for a generic email (info@, admin@, fire@)
+2. If a generic email exists, use it. Subject line should include "ATTN: Chief [name]"
+3. If no email at all: skip the department. Add to learnings: "[Department] — no email found [date]"
+4. NEVER guess an email pattern. first.last@city.gov produces bounced emails.
+
+### When you can't find a medical director
+
+1. Note it in the research output: "Medical Director: NOT FOUND"
+2. Still write the email to the chief without the MD CC line
+3. Add to learnings: "[Department] — MD not found, checked [sources] [date]"
+4. Check if nearby departments in the same county have a known MD. Many MDs
+   cover multiple agencies in a region.
+
+### Email verification without dashboard access
+
+Reps don't have access to the IntuBlade SMTP verification tool. Instead:
+1. **Verify from the source.** Find the email on the official city/department/hospital website.
+   If you can see the email in the HTML of the page, it's real.
+2. **Check the domain.** Does the city/department actually use that email domain?
+   If the city website is cityofparma-oh.gov and the email is @cityofparma-oh.gov, it's consistent.
+3. **Google the email.** Search for the exact email address in quotes. If it appears
+   in city council minutes, press releases, or official documents, it's real.
+4. **When in doubt, skip.** Don't send to an unverified address. One bounce hurts everyone.
+
+### States outside Ohio
+
+The hospital system mappings and MD discovery sources in this file are Ohio-specific.
+For other states:
+1. Search for "[state] EMS medical direction" to find the equivalent hospital systems
+2. Check the state's EMS regulatory agency (every state has one) for MD directories
+3. NPI Registry works nationwide — always check it
+4. Save new state-specific discoveries to learnings.md so they help next time
+5. Ask Andrew for hospital system mappings if he has them for your assigned state
+
+### Sending limits
+
+- **Maximum 10 cold emails per day per rep.** Quality over volume.
+- **Never send the same email to multiple departments.** Every email is personalized.
+- **Space sends 5-10 minutes apart.** Don't send 10 emails in 2 minutes.
+- **If you're unsure about a send, don't send it.** Ask Andrew.
+
+### After each session
+
+Before ending a Claude session, always:
+1. Save any new learnings ("save to learnings: [what you discovered]")
+2. Note which departments you emailed so you can track follow-ups
+3. Flag any departments that need Andrew's attention
+
+---
+
+## PART 6: CRM / HUBSPOT
+
+IntuBlade uses HubSpot for deal tracking. After you send an email to a department,
+log it in HubSpot so the whole team can see pipeline status.
+
+### What to log after every send
+
+1. **Create or update the contact** in HubSpot with the chief's info
+2. **Create or update the company** (the department)
+3. **Log the email activity** on the contact record
+4. **Set the deal stage** to "Outreach Sent"
+
+### If you don't have HubSpot access
+
+Ask Andrew. He'll give you access to the IntuBlade HubSpot workspace. Until
+then, keep a simple log in this format and share it with Andrew weekly:
+
+```
+| Date | Department | Chief | Email | MD CC'd | Signal Used | Status |
+|------|-----------|-------|-------|---------|-------------|--------|
+| 2026-03-31 | Parma Fire | M. Lasky | firechief@cityofparma-oh.gov | Dr. Dussel | SAFER grant | Draft sent |
+```
+
+### When the rep says "log this to HubSpot"
+
+If HubSpot MCP or API access is available, create/update the contact and
+company records. If not, generate the log row in the table format above
+so the rep can paste it into their tracking sheet.

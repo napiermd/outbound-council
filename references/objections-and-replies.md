@@ -108,6 +108,38 @@ Also check for grant opportunities:
 > Have you looked at AFG or SAFER grants this cycle? Airway equipment
 > qualifies under operations and safety.
 
+### "Can I see a demo?" / "Do you have a demo unit?"
+
+The deployment kit IS the demo. Redirect.
+
+> That's exactly what the deployment kit is. I'll send you [kit contents]
+> and your crews try it on real calls. Better than a 10-minute demo in a
+> conference room. What's the best shipping address?
+
+### "We're a volunteer department / we barely have budget"
+
+Volunteer departments are price-sensitive but they're also the ones who
+benefit most. Single-use means no reprocessing costs, no maintenance.
+
+> I hear you on budget. That's actually why I built IntuBlade as a
+> single-use device. No $4,000 scope to maintain, no reprocessing, no
+> repair costs. At $[price] per blade, it's the most affordable way to
+> put video on your rigs. I'll send a kit at no cost so your crews can
+> try it.
+
+### "Can you call me instead?" / "Let's set up a call"
+
+This is a buying signal. Book it immediately.
+
+> Absolutely. Here's my calendar, grab whatever time works:
+> [calendar link]
+>
+> If none of those work, just tell me a day and time and I'll make it happen.
+
+If the department is Tier 1 or the chief wants to discuss clinical specifics,
+loop Andrew in: "I'm going to copy our CEO Andrew Napier on this. He's a
+board-certified EM physician and can answer any clinical questions directly."
+
 ### "Who are you?" / "How did you get my email?"
 
 Be transparent. You're a physician who built a device, not a cold caller
