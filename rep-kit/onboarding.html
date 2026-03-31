@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntuBlade Outbound: Rep Setup</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1c1c1c;
+    --border: #2a2a2a;
+    --border-hover: #3a3a3a;
+    --text: #e8e8e8;
+    --text-muted: #888;
+    --text-dim: #666;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --green: #22c55e;
+    --green-dim: #166534;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --code-bg: #0d1117;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 120px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .header p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  .time-estimate {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+
+  .time-estimate svg { flex-shrink: 0; }
+
+  /* Steps */
+  .step {
+    margin-bottom: 40px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s;
+  }
+
+  .step:hover { border-color: var(--border-hover); }
+
+  .step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+
+  .step-number.done {
+    background: var(--green);
+  }
+
+  .step-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .step-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .step p, .step li {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .step p + p { margin-top: 12px; }
+
+  .step a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    transition: border-color 0.2s;
+  }
+
+  .step a:hover { border-color: var(--accent); }
+
+  .step ol, .step ul {
+    margin-top: 12px;
+    padding-left: 20px;
+  }
+
+  .step li { margin-bottom: 8px; }
+  .step li::marker { color: var(--text-dim); }
+
+  /* Code blocks */
+  .code-block {
+    position: relative;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .code-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .copy-btn:hover {
+    background: var(--surface-2);
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .copy-btn.copied {
+    color: var(--green);
+    border-color: var(--green-dim);
+  }
+
+  .code-block pre {
+    padding: 16px;
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: auto;
+    color: var(--text);
+  }
+
+  .code-block pre .comment { color: var(--text-dim); }
+
+  /* Callouts */
+  .callout {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .callout-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+
+  .callout.info {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    color: #93b5f6;
+  }
+
+  .callout.warn {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    color: #f5c868;
+  }
+
+  .callout.success {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    color: #6ee7a0;
+  }
+
+  /* Example conversation */
+  .example {
+    margin-top: 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .example-header {
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .msg {
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .msg:last-child { border-bottom: none; }
+
+  .msg.user {
+    background: rgba(59, 130, 246, 0.04);
+  }
+
+  .msg.assistant {
+    background: var(--surface);
+  }
+
+  .msg-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .msg.user .msg-label { color: var(--accent); }
+  .msg.assistant .msg-label { color: var(--green); }
+
+  .msg p { color: var(--text-muted); }
+  .msg p + p { margin-top: 8px; }
+
+  /* Banned list */
+  .banned-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .banned-item {
+    font-size: 13px;
+    font-family: var(--mono);
+    padding: 6px 10px;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    border-radius: 4px;
+    color: #f87171;
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.3);
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-box {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-hover);
+    border-radius: 4px;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check-box:hover { border-color: var(--accent); }
+
+  .check-box.checked {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  .check-box.checked::after {
+    content: '';
+    width: 6px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translateY(-1px);
+  }
+
+  /* Section divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  h2 + p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  /* Expandable sections */
+  details {
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    background: rgba(255,255,255,0.02);
+    transition: background 0.15s;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  summary:hover { background: rgba(255,255,255,0.04); }
+
+  summary::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(-45deg);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  details[open] summary::before { transform: rotate(45deg); }
+
+  details .detail-body {
+    padding: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Progress tracker */
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--surface);
+    z-index: 100;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  /* Platform tabs */
+  .platform-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 16px;
+    margin-bottom: 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  .platform-tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: none;
+    border-right: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .platform-tab:last-child { border-right: none; }
+  .platform-tab:hover { color: var(--text-muted); background: var(--surface-2); }
+
+  .platform-tab.active {
+    color: var(--text);
+    background: var(--code-bg);
+  }
+
+  .platform-content {
+    display: none;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+  }
+
+  .platform-content.active { display: block; }
+
+  .platform-content pre {
+    padding: 16px;
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    background: var(--code-bg);
+    color: var(--text);
+    margin: 0;
+  }
+
+  .platform-content .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .platform-content .code-inner {
+    position: relative;
+    padding-top: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 32px 16px 80px; }
+    .header h1 { font-size: 26px; }
+    .step { padding: 20px; }
+    .banned-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Rep Onboarding</div>
+    <h1>IntuBlade Outbound Setup</h1>
+    <p>Set up Claude to research fire and EMS departments and write personalized cold emails. It finds the contacts, the signals, and writes the email in your voice. No coding. Follow the steps.</p>
+    <div class="time-estimate">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      15 minutes total
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step" data-step="1">
+    <div class="step-header">
+      <div class="step-number">1</div>
+      <div>
+        <div class="step-title">Get a Claude account</div>
+        <div class="step-subtitle">2 minutes</div>
+      </div>
+    </div>
+
+    <ol>
+      <li>Go to <a href="https://claude.ai" target="_blank">claude.ai</a> and create an account (or sign in if you have one)</li>
+      <li>Upgrade to <strong>Pro</strong> ($20/month). Click your name in the bottom-left, then "Upgrade to Pro"</li>
+    </ol>
+
+    <div class="callout info">
+      <span class="callout-icon">i</span>
+      <span>You need Pro for Claude Code access. The free plan won't work.</span>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" data-step="2">
+    <div class="step-header">
+      <div class="step-number">2</div>
+      <div>
+        <div class="step-title">Install Claude Code</div>
+        <div class="step-subtitle">3 minutes</div>
+      </div>
+    </div>
+
+    <p>Open your terminal app. On Mac that's <strong>Terminal</strong> (search for it in Spotlight). On Windows, open <strong>PowerShell</strong>.</p>
+
+    <p>Copy and paste this command, then hit Enter:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>terminal</span>
+        <button class="copy-btn" onclick="copyCode(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <pre>npm install -g @anthropic-ai/claude-code</pre>
+    </div>
+
+    <details>
+      <summary>Don't have npm? Install Node.js first</summary>
+      <div class="detail-body">
+        <p>Go to <a href="https://nodejs.org" target="_blank">nodejs.org</a> and download the LTS version. Install it (just click Next through the installer). Then come back and run the command above.</p>
+        <p style="margin-top:8px">To check if you already have it, run:</p>
+        <div class="code-block" style="margin-top:8px">
+          <div class="code-block-header">
+            <span>terminal</span>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <pre>node --version</pre>
+        </div>
+        <p style="margin-top:8px">If it shows a version number (like v22.x.x), you're good. If it says "command not found," install Node.js first.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Getting a "permission denied" error on Mac?</summary>
+      <div class="detail-body">
+        <p>Run it with sudo instead:</p>
+        <div class="code-block" style="margin-top:8px">
+          <div class="code-block-header">
+            <span>terminal</span>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <pre>sudo npm install -g @anthropic-ai/claude-code</pre>
+        </div>
+        <p style="margin-top:8px">It will ask for your computer password. Type it (nothing will appear as you type, that's normal) and hit Enter.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" data-step="3">
+    <div class="step-header">
+      <div class="step-number">3</div>
+      <div>
+        <div class="step-title">Download the outbound kit</div>
+        <div class="step-subtitle">2 minutes</div>
+      </div>
+    </div>
+
+    <p>This downloads the sales playbook, the AI advisors, and all the reference materials Claude needs.</p>
+
+    <p>Copy and paste this into your terminal:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>terminal</span>
+        <button class="copy-btn" onclick="copyCode(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <pre>git clone https://github.com/napiermd/outbound-council.git ~/outbound-council</pre>
+    </div>
+
+    <details>
+      <summary>Don't have git?</summary>
+      <div class="detail-body">
+        <p><strong>Mac:</strong> Open Terminal and type <code>git</code>. If it's not installed, your Mac will prompt you to install the Xcode command line tools. Click "Install" and wait.</p>
+        <p style="margin-top:8px"><strong>Windows:</strong> Go to <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a> and download the installer. Run it with default settings.</p>
+      </div>
+    </details>
+
+    <div class="callout info">
+      <span class="callout-icon">i</span>
+      <span>This creates a folder called <code>outbound-council</code> in your home directory. That's where you'll work from.</span>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" data-step="4">
+    <div class="step-header">
+      <div class="step-number">4</div>
+      <div>
+        <div class="step-title">Set up your CLAUDE.md</div>
+        <div class="step-subtitle">1 minute</div>
+      </div>
+    </div>
+
+    <p>Copy the rep instructions into the right place so Claude reads them automatically:</p>
+
+    <div class="platform-tabs">
+      <button class="platform-tab active" onclick="switchPlatform('mac', this)">Mac</button>
+      <button class="platform-tab" onclick="switchPlatform('win', this)">Windows</button>
+    </div>
+    <div class="platform-content active" id="platform-mac-step4">
+      <div class="code-inner">
+        <div style="display:flex;justify-content:flex-end;padding:8px 12px 0">
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>cp ~/outbound-council/rep-kit/CLAUDE.md ~/outbound-council/CLAUDE.md</pre>
+      </div>
+    </div>
+    <div class="platform-content" id="platform-win-step4">
+      <div class="code-inner">
+        <div style="display:flex;justify-content:flex-end;padding:8px 12px 0">
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>copy %USERPROFILE%\outbound-council\rep-kit\CLAUDE.md %USERPROFILE%\outbound-council\CLAUDE.md</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step" data-step="5">
+    <div class="step-header">
+      <div class="step-number">5</div>
+      <div>
+        <div class="step-title">Create your voice profile</div>
+        <div class="step-subtitle">5 minutes</div>
+      </div>
+    </div>
+
+    <p>This is the most important step. Your voice profile teaches Claude to write like <strong>you</strong>, not like a robot.</p>
+
+    <ol>
+      <li>Open the file <code>~/outbound-council/voices/voice-template.md</code> in any text editor (TextEdit, Notepad, VS Code, whatever you have)</li>
+      <li>Fill out every section. Be honest. If you're casual, say so. If you never say "synergy," put it in the "never say" list.</li>
+      <li>Save it as your name: <code>~/outbound-council/voices/danny.md</code> (use your actual name)</li>
+    </ol>
+
+    <div class="callout warn">
+      <span class="callout-icon">!</span>
+      <span>Don't skip this. Without your voice file, Claude writes generic corporate AI output. With it, emails sound like you.</span>
+    </div>
+
+    <details>
+      <summary>How to open the file on Mac</summary>
+      <div class="detail-body">
+        <p>Paste this in Terminal to open it in TextEdit:</p>
+        <div class="code-block" style="margin-top:8px">
+          <div class="code-block-header">
+            <span>terminal</span>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <pre>open -a TextEdit ~/outbound-council/voices/voice-template.md</pre>
+        </div>
+        <p style="margin-top:8px">After editing, use File > Save As and save it as your name (e.g., <code>danny.md</code>) in the same <code>voices</code> folder.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How to open the file on Windows</summary>
+      <div class="detail-body">
+        <p>Paste this in PowerShell:</p>
+        <div class="code-block" style="margin-top:8px">
+          <div class="code-block-header">
+            <span>powershell</span>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+          <pre>notepad $env:USERPROFILE\outbound-council\voices\voice-template.md</pre>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step" data-step="6" style="border-color: var(--green-dim); background: rgba(34, 197, 94, 0.03);">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--green);">6</div>
+      <div>
+        <div class="step-title">Start Claude</div>
+        <div class="step-subtitle">You're done with setup. This is how you work every day.</div>
+      </div>
+    </div>
+
+    <p>Every time you sit down to do outreach, run these two commands:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>terminal</span>
+        <button class="copy-btn" onclick="copyCode(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <pre>cd ~/outbound-council && claude</pre>
+    </div>
+
+    <p style="margin-top:12px">That's it. Claude opens in your terminal with the full IntuBlade playbook loaded. Start typing.</p>
+
+    <div class="callout success">
+      <span class="callout-icon">&#10003;</span>
+      <span>Claude automatically reads all the reference files, the sales council, and the anti-AI rules. You don't need to upload or configure anything each time.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HOW TO USE IT -->
+  <div class="section-label">Daily Workflow</div>
+  <h2>Two things Claude does for you</h2>
+  <p>Research departments and write emails. Here's how both work.</p>
+
+  <!-- Research example -->
+  <div class="step" style="margin-top:24px">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--accent); font-size:12px;">1</div>
+      <div>
+        <div class="step-title">Research a department</div>
+        <div class="step-subtitle">Just give Claude a department name. It finds everything.</div>
+      </div>
+    </div>
+
+    <p>You don't need to Google anything first. Just tell Claude the department name and state. It will find the chief, medical director, training officer, fleet data, and recent news.</p>
+
+    <div class="example">
+      <div class="example-header">Example: Research</div>
+      <div class="msg user">
+        <div class="msg-label">You</div>
+        <p>Research Parma Fire Department in Ohio. Find me everyone I should contact and any recent news.</p>
+      </div>
+      <div class="msg assistant">
+        <div class="msg-label">Claude</div>
+        <p>Claude searches the web and comes back with a structured report:</p>
+        <p style="margin-top:8px; font-family: var(--mono); font-size: 13px; white-space: pre-line;">
+<strong>Parma Fire Department — Research Summary</strong>
+
+<strong>People Found</strong>
+| Role | Name | Email | Source |
+| Chief | Michael Lasky | firechief@cityofparma-oh.gov | cityofparma-oh.gov staff directory |
+| Medical Director | Dr. Christopher Dussel | christopher.dussel@uhhospitals.org | UH Hospitals EMS page |
+| Deputy Chief | Mark Brickman | — | Department website |
+
+<strong>Department Profile</strong>
+- 7 stations, 11 apparatus, ALS
+- ~5,500 EMS runs/year, ~108 intubations/year
+- Serves City of Parma (pop. 81,000)
+
+<strong>Signals</strong>
+1. SAFER grant for 12 firefighters (Jan 2026) — FEMA awards database
+2. Record call volume in 2025 — Parma Observer article
+
+<strong>Confidence Notes</strong>
+- Chief email verified from city staff directory
+- MD email verified deliverable (SMTP check score: 100)
+- Training officer: NOT FOUND
+        </p>
+      </div>
+      <div class="msg user">
+        <div class="msg-label">You</div>
+        <p>Can you also find their training officer? And check if Dr. Dussel covers any other departments nearby.</p>
+      </div>
+      <div class="msg assistant">
+        <div class="msg-label">Claude</div>
+        <p>Claude digs deeper and reports back with what it found (or didn't find).</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-icon">i</span>
+      <span>Claude will tell you what it verified vs. what it couldn't confirm. Always check the "Confidence Notes" section before using any contact info.</span>
+    </div>
+  </div>
+
+  <!-- Research prompts -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--accent); font-size:10px;">1b</div>
+      <div>
+        <div class="step-title">Research prompts you can use</div>
+        <div class="step-subtitle">Copy any of these. Replace brackets with real info.</div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>full research</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Research [department name] in [state]. Find the chief, medical director, training officer, fleet info, and any recent news I can use in an email.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>find contacts</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Who are the key contacts at [department name]? I need the chief, medical director, and anyone involved in equipment decisions.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>find medical director</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Find the medical director for [department name] in [city], [state]. Check hospital system EMS pages and NPI registry.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>find recent news</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>What recent news, grants, or events has [department name] had in the last 6 months? I need something current for a cold email opener.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>verify an email</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Verify this email address before I use it: [email]. Check the city staff directory or department website to confirm it actually exists.</pre>
+    </div>
+  </div>
+
+  <!-- Email example -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--green); font-size:12px;">2</div>
+      <div>
+        <div class="step-title">Write the email</div>
+        <div class="step-subtitle">After research, tell Claude to write the email. It uses everything it found.</div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-header">Example: Research then Email</div>
+      <div class="msg user">
+        <div class="msg-label">You</div>
+        <p>Good research. Now write me a cold email to Chief Lasky. CC Dr. Dussel.</p>
+      </div>
+      <div class="msg assistant">
+        <div class="msg-label">Claude</div>
+        <p>Claude writes the email in your voice, scores it against all 6 sales advisors, checks for AI slop, and shows you the result with scores. If anything scores below 6, it rewrites automatically.</p>
+      </div>
+      <div class="msg user">
+        <div class="msg-label">You</div>
+        <p>The opening is too generic. Use the SAFER grant. And make it shorter.</p>
+      </div>
+      <div class="msg assistant">
+        <div class="msg-label">Claude</div>
+        <p>Claude rewrites with your feedback, re-scores, and shows the updated version.</p>
+      </div>
+      <div class="msg user">
+        <div class="msg-label">You</div>
+        <p>Good. I'll send it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email prompts -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--green); font-size:10px;">2b</div>
+      <div>
+        <div class="step-title">Email prompts you can use</div>
+        <div class="step-subtitle">Copy any of these after you've done the research step.</div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>write email from research</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Write a cold email to the chief using the research above. CC the medical director if we have a verified email.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>score your own email</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Score this email against the council:
+
+[paste your email here]</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>iterate</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>Make it shorter. Under 120 words.</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header"><span>no signal found</span><button class="copy-btn" onclick="copyCode(this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button></div>
+      <pre>No recent news on this department. Write a generic deployment kit email using the fleet data from the research.</pre>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RULES -->
+  <div class="section-label">Know the Rules</div>
+  <h2>What makes a good email</h2>
+  <p>Claude enforces these automatically, but you should know them too.</p>
+
+  <div class="step" style="margin-top:24px">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--red); font-size:12px;">!</div>
+      <div>
+        <div class="step-title">Never use these</div>
+        <div class="step-subtitle">These words and phrases scream "AI wrote this." Recipients notice.</div>
+      </div>
+    </div>
+
+    <p><strong>Banned sign-offs:</strong></p>
+    <div class="banned-grid">
+      <div class="banned-item">Best regards</div>
+      <div class="banned-item">Kind regards</div>
+      <div class="banned-item">Warm regards</div>
+      <div class="banned-item">Best</div>
+    </div>
+
+    <p style="margin-top:16px"><strong>Banned openers:</strong></p>
+    <div class="banned-grid">
+      <div class="banned-item">I hope this finds you well</div>
+      <div class="banned-item">I wanted to reach out</div>
+      <div class="banned-item">I'm reaching out because</div>
+      <div class="banned-item">Just following up</div>
+    </div>
+
+    <p style="margin-top:16px"><strong>Banned words:</strong></p>
+    <div class="banned-grid">
+      <div class="banned-item">delve</div>
+      <div class="banned-item">seamless</div>
+      <div class="banned-item">innovative</div>
+      <div class="banned-item">leverage</div>
+      <div class="banned-item">robust</div>
+      <div class="banned-item">cutting-edge</div>
+      <div class="banned-item">game-changer</div>
+      <div class="banned-item">synergy</div>
+      <div class="banned-item">groundbreaking</div>
+      <div class="banned-item">transformative</div>
+    </div>
+
+    <p style="margin-top:16px"><strong>Banned punctuation:</strong></p>
+    <div class="banned-grid" style="grid-template-columns: 1fr;">
+      <div class="banned-item">Em dashes -- the long dash. Use periods or commas instead.</div>
+      <div class="banned-item">Bold text in email prose</div>
+      <div class="banned-item">"Additionally," / "Furthermore," / "Moreover," to start sentences</div>
+    </div>
+
+    <details>
+      <summary>See the full list</summary>
+      <div class="detail-body">
+        <p>The complete list is in <code>references/anti-ai-slop.md</code> in your outbound-council folder. Claude reads this file automatically, but you should read it once to know what it catches.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number" style="background: var(--green); font-size:12px;">&#10003;</div>
+      <div>
+        <div class="step-title">What good emails look like</div>
+        <div class="step-subtitle">Short. Specific. Opens with their world.</div>
+      </div>
+    </div>
+
+    <ul class="checklist">
+      <li>
+        <span class="check-box"></span>
+        <span><strong>Under 150 words.</strong> Cold outreach. Every sentence earns its place.</span>
+      </li>
+      <li>
+        <span class="check-box"></span>
+        <span><strong>First sentence is about THEM.</strong> Their grant, their new station, their call volume. Not about IntuBlade.</span>
+      </li>
+      <li>
+        <span class="check-box"></span>
+        <span><strong>One specific detail.</strong> Something only this department would have. Shows you did homework.</span>
+      </li>
+      <li>
+        <span class="check-box"></span>
+        <span><strong>Ends with a real question.</strong> Not "let me know if you have questions." A question about their situation.</span>
+      </li>
+      <li>
+        <span class="check-box"></span>
+        <span><strong>Uses contractions.</strong> "I'm" not "I am." Write like you talk.</span>
+      </li>
+      <li>
+        <span class="check-box"></span>
+        <span><strong>Verified email address.</strong> Confirmed from the city directory or department website. Never guessed.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="section-label">Troubleshooting</div>
+  <h2>Common issues</h2>
+
+  <details style="margin-top:16px">
+    <summary>"command not found: claude"</summary>
+    <div class="detail-body">
+      <p>Claude Code isn't installed. Go back to Step 2 and run the install command. If you just installed Node.js, close your terminal and open a new one first.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>"command not found: npm"</summary>
+    <div class="detail-body">
+      <p>Node.js isn't installed. Go to <a href="https://nodejs.org" target="_blank">nodejs.org</a>, download the LTS version, install it, then close and reopen your terminal.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Claude isn't using my voice</summary>
+    <div class="detail-body">
+      <p>Make sure your voice file is saved in the <code>voices/</code> folder inside the outbound-council directory. The file name should be your name (e.g., <code>danny.md</code>). If Claude still isn't picking it up, type: "Read my voice file from the voices folder and use it."</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Claude is writing generic emails</summary>
+    <div class="detail-body">
+      <p>You probably didn't give it enough research. The more specific details you paste in (chief name, station count, recent news), the more specific the email will be. If you just say "write an email to a fire department," you'll get garbage.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Claude used a banned word</summary>
+    <div class="detail-body">
+      <p>Tell it: "That email has banned words from the anti-AI-slop list. Rewrite it." If it keeps happening, start a new conversation. Long conversations can drift.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I update to the latest version?</summary>
+    <div class="detail-body">
+      <p>When Andrew updates the playbook or references, pull the latest:</p>
+      <div class="code-block" style="margin-top:8px">
+        <div class="code-block-header">
+          <span>terminal</span>
+          <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <pre>cd ~/outbound-council && git pull</pre>
+      </div>
+    </div>
+  </details>
+
+  <div class="divider"></div>
+
+  <div style="text-align:center; color: var(--text-dim); font-size: 13px; padding: 20px 0;">
+    IntuBlade Outbound Kit &middot; Questions? Ask Andrew.
+  </div>
+
+</div>
+
+<script>
+function copyCode(btn) {
+  const block = btn.closest('.code-block') || btn.closest('.code-inner') || btn.closest('.platform-content');
+  const pre = block.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent.trim());
+  const orig = btn.innerHTML;
+  btn.classList.add('copied');
+  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied';
+  setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+}
+
+function switchPlatform(platform, tab) {
+  const step = tab.closest('.step');
+  step.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+  step.querySelectorAll('.platform-content').forEach(c => c.classList.remove('active'));
+  tab.classList.add('active');
+  const suffix = platform === 'mac' ? 'mac' : 'win';
+  const contents = step.querySelectorAll('.platform-content');
+  if (suffix === 'mac') contents[0].classList.add('active');
+  else contents[1].classList.add('active');
+}
+
+// Progress bar
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (window.scrollY / h) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+</script>
+
+</body>
+</html>
