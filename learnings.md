@@ -1,90 +1,77 @@
-# Learnings
+# Shared Learnings
 
-This file accumulates knowledge over time. Every time you discover something
-useful during research, add it here. Claude reads this file every session,
-so anything you add helps future research go faster.
+This is the team's centralized brain. Every rep contributes. Claude reads ALL
+learnings files at the start of every session. What one rep discovers helps
+everyone.
 
-## How to add a learning
+## How it works
 
-After a research session, tell Claude:
-"Save this to learnings: [what you learned]"
+Each rep has their own file: `learnings/[your-name].md`
+There's also this shared file for team-wide knowledge.
 
-Claude will append it to this file. Or you can edit this file directly.
+**To save a learning:**
+Tell Claude: "Save this to learnings: [what you discovered]"
+Claude writes it to YOUR learnings file (learnings/[name].md).
 
-## Format
+**To sync with the team:**
+Run `git pull` before starting a session. Run `git push` after.
+This pulls everyone else's learnings into your local copy.
 
-Keep entries short. Date them. Group by category.
+Because each rep has their OWN file, there are no merge conflicts.
+You only edit your file. Everyone else only edits theirs.
+
+**Claude reads all files in the learnings/ folder.** So when Danny discovers
+that Dr. Dussel covers three departments, Sarah gets that knowledge too
+on her next `git pull`.
 
 ---
 
-## Medical Director Mappings
+## Team-Wide Knowledge (edit this section directly for shared facts)
 
-These are confirmed MD-to-department relationships. When one MD covers multiple
-departments, finding them once unlocks outreach to all of them.
+### Medical Director Mappings
 
-<!-- Add entries like:
-- Dr. Christopher Dussel (UH Hospitals) → Parma Fire, Seven Hills Fire, Brooklyn Fire (2026-03)
-- Dr. Joseph Bocka (OhioHealth) → Jefferson Twp Fire, Violet Twp Fire (2026-03)
--->
+Confirmed MD-to-department relationships. One MD covering multiple departments
+means finding them once unlocks outreach to all of them.
 
-## Hospital System Coverage Areas
+- Dr. Christopher Dussel (UH Hospitals) -> Parma Fire, Chesterland Fire Rescue (2026-03)
+- Dr. Joseph Bocka (OhioHealth) -> Jefferson Twp Fire (2026-03)
+- Dr. Donald Spaner (UH Geauga) -> Chesterland Fire Rescue (2026-03, NPI: 1700823481)
 
-Which hospital systems provide EMS medical direction in which regions.
+### Hospital System Coverage Areas
 
-<!-- Add entries like:
 - OhioHealth: Central OH (Columbus metro, Franklin/Delaware/Licking counties)
 - UH (University Hospitals): NE OH (Cuyahoga, Geauga, Lake counties)
 - Cleveland Clinic: NE OH (Cuyahoga, Summit, Medina counties)
 - Wright State / Boonshoft: SW OH (Montgomery, Greene, Miami counties)
 - Premier Health: SW OH (Montgomery, Miami, Darke counties)
 - UC Health: Cincinnati metro (Hamilton, Butler, Warren counties)
--->
+- USACS: contract EMS physicians across multiple OH hospital systems
 
-## Email Patterns That Work
+### Email Patterns by Domain
 
-Verified email patterns by domain. Saves time on future verification.
-
-<!-- Add entries like:
 - cityofparma-oh.gov: firechief@cityofparma-oh.gov (role-based, not personal)
 - daytonohio.gov: firstname.lastname@daytonohio.gov (full first name, never nickname)
 - uhhospitals.org: firstname.lastname@uhhospitals.org
-- usacs.com: first_initial + last (jaugustine, pamin)
--->
+- ohiohealth.com: firstname.lastname@ohiohealth.com
+- ccf.org: firstname.lastname@ccf.org (Cleveland Clinic)
+- wright.edu: firstname.lastname@wright.edu
+- usacs.com: first_initial + last (jaugustine@usacs.com, pamin@usacs.com)
+- premierhealth.com: firstname.lastname@premierhealth.com
+- chestertwp.org: firechief@chestertwp.org (role-based)
 
-## Departments to Skip
+### Departments to Skip
 
-Departments that should NOT be contacted, with reason.
+- (Add here: already customers, BLS-only, unsubscribe requests)
 
-<!-- Add entries like:
-- [Department name] — already a customer (2026-03)
-- [Department name] — BLS only, no intubation (2026-03)
-- [Department name] — explicit unsubscribe request (2026-03)
--->
+### Signals That Got Replies
 
-## Signals That Worked
+- (Track here: which signal types in email openers actually get responses)
 
-Which signals in email openers got replies. Helps prioritize research.
+### State-Specific Notes
 
-<!-- Add entries like:
-- SAFER grants: strong opener. Chiefs care about staffing. (3 replies from 8 sends)
-- New chief appointment: good. They want to make their mark. (2 replies from 5 sends)
-- Budget increase: moderate. Less personal than staffing news.
--->
-
-## State-Specific Notes
-
-Knowledge that's specific to a state's EMS structure.
-
-### Ohio
-<!-- Add entries like:
+#### Ohio
 - Ohio has regional EMS councils that track medical directors
-- .gov email verification: always check city staff directory, cities use full first names
+- .gov emails: always check city staff directory, cities use full first names (Christopher not Chris)
 - ODNR grants are Ohio-specific (Department of Natural Resources)
-- Ohio fire departments often run EMS (combined fire/EMS, not separate agencies)
--->
-
-<!-- Add new state sections as you expand:
-### Texas
-### Florida
-### Pennsylvania
--->
+- Most Ohio fire departments run combined fire/EMS
+- Ohio Division of EMS at ems.ohio.gov has provider directories

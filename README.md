@@ -4,7 +4,7 @@ Sales research and outreach toolkit powered by Claude Code. Research fire/EMS de
 
 ## For Sales Reps
 
-**[Open the setup guide](rep-kit/onboarding.html)** to get started. Download this repo, open the HTML file in your browser, and follow the steps. 15 minutes to set up.
+**[Open the setup guide](https://napiermd.github.io/outbound-council/rep-kit/onboarding.html)** to get started. 20 minutes to set up.
 
 What you get:
 - Research any fire/EMS department by name. Claude finds the chief, medical director, training officer, fleet data, and recent news.
@@ -35,7 +35,10 @@ outbound-council/
 │   └── deployment-kit-psychology.md ← Free kit offer structure
 ├── voices/
 │   └── voice-template.md      ← Fill this out with your writing style
-├── learnings.md               ← Accumulates knowledge over time
+├── learnings.md               ← Team-wide shared knowledge
+├── learnings/                 ← Per-rep learnings (no merge conflicts)
+│   ├── andrew.md
+│   └── [your-name].md         ← Your personal discoveries
 ├── SKILL.md                   ← Claude Code skill definition
 └── LICENSE
 ```
