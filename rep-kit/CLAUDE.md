@@ -49,6 +49,9 @@ to find everything. Don't wait for them to tell you what to look for. Go find it
 - Annual EMS run count
 - Coverage area (city, townships, villages served)
 - Population served
+- **Estimated intubations/year** (calculate: EMS runs x 0.02, or population x 0.07 x 0.02)
+- **Tier and price/blade** (look up from the pricing table based on intubations)
+- **Annual contract value** (intubations x price/blade)
 
 **Sources for department info:**
 - Department website "About" / "Operations" / "Apparatus" pages
@@ -154,6 +157,13 @@ When you finish researching, present it like this:
 - Coverage area: [description]
 - Population served: [number]
 
+### Pricing
+- Estimated intubations/year: [number] (how calculated)
+- Tier: [1/2/3/4] — [label]
+- Price per blade: $[amount]
+- Annual contract value: $[intubations x price]
+- Deployment kit: [kit contents and dollar value]
+
 ### Signals
 1. [Signal with date and source URL]
 2. [Signal with date and source URL]
@@ -203,12 +213,54 @@ Every email must pass ALL of these before you show it:
 
 If any gate fails, rewrite and re-score. Don't show a failing email.
 
-### Offer tiers
+### Pricing and tiers
 
-| Tier | Intubations/year | Kit contents | Value |
+**Intubations are the source of truth for pricing.** The tier determines the
+price per blade and the deployment kit offer. Get this right.
+
+**How to estimate intubations/year:**
+- If you have annual EMS run count: intubations = EMS runs x 0.02 (roughly 2% of calls)
+- If you have population served: EMS runs ~ population x 0.07, then x 0.02
+- If you have truck count only: each ALS unit does ~1,500-2,500 runs/year
+- Ask Claude to estimate if you only have partial data
+
+**Tier table (from tierUtils.ts, the source of truth):**
+
+| Tier | Intubations/year | Price/blade | Label |
 |------|-----------------|-------------|-------|
-| 1-2 | 200+ | 12 blades sizes 3 and 4, full app access | $1,140 |
-| 3-4 | Under 200 | 1 training blade + 2 clinical blades, sizes 3 and 4 | $285 |
+| Tier 1 | 1,000+ | $60 | Enterprise |
+| Tier 2 | 500-999 | $63 | High Volume |
+| Tier 2 | 200-499 | $70 | Growth |
+| Tier 3 | 50-199 | $78 | Standard |
+| Tier 4 | Under 50 | $95 | Spot |
+
+**CRITICAL:** Tier 2 has TWO price points. 500+ intubations = $63. 200-499 = $70.
+Both are Tier 2 but pricing differs. Get the intubation count right.
+
+**Deployment kit offers by tier:**
+
+| Tier | Kit contents | Dollar value to quote |
+|------|-------------|----------------------|
+| 1-2 (200+ intubations) | 12 blades sizes 3 and 4, full app access | $1,140 |
+| 3-4 (under 200 intubations) | 1 training blade + 2 clinical blades, sizes 3 and 4 | $285 |
+
+**Annual contract value (for context, don't put in the email):**
+- Calculate: intubations/year x price/blade = annual value
+- Example: Parma Fire, 108 intubations x $70/blade = $7,560/year
+- This helps you prioritize which departments to research first
+
+**What to say about competitor pricing:**
+- Prehospital reusable scopes cost $3,000-$5,000 each. NOT $15,000.
+- $15K is hospital-grade (Storz, GlideScope). Prehospital is cheaper.
+- Use "$4,000 reusable scope" as the comparison point in emails.
+- "Your department spends $4,000 on a reusable scope that needs reprocessing.
+  We're $70 a blade, single-use, plug into any phone."
+
+**Intubation math in the email:**
+When writing the fleet line, connect their volume to real cost:
+- "With [X] ALS rigs running [Y] calls a year, that's roughly [Z] intubations.
+  At $[price] a blade, video on every airway costs less than one reusable scope."
+- Only use this math if you have real run data. Don't guess publicly.
 
 ### Email template structure
 
