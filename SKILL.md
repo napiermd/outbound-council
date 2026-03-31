@@ -157,15 +157,23 @@ If the user says "I just want to explore" or "think with me", enter more convers
 
 ---
 
-## Loading Advisor Details
+## Mandatory References
 
-When specific advisor expertise is needed, reference their full profiles:
+### Always load (every email, every review):
+- **Anti-AI Slop** → [references/anti-ai-slop.md](references/anti-ai-slop.md) — banned words, banned phrases, banned patterns. Non-negotiable. Every output is checked against this. If anything from this list appears in your output, rewrite before presenting.
+- **Rep voice file** → Check `voices/` for the current user's voice profile. Match their style.
 
-- **Robert Cialdini** → See [references/cialdini.md](references/cialdini.md) for detailed persuasion principles
-- **Alex Hormozi** → See [references/hormozi.md](references/hormozi.md) for offers and pricing frameworks
-- **Neil Rackham** → See [references/rackham.md](references/rackham.md) for discovery conversation techniques
-- **Chris Voss** → See [references/voss.md](references/voss.md) for negotiation tactics
-- **Oren Klaff** → See [references/klaff.md](references/klaff.md) for frame control methods
-- **Eugene Schwartz** → See [references/schwartz.md](references/schwartz.md) for copywriting and messaging
+### Load for email writing/review:
+- **Robert Cialdini** → [references/cialdini.md](references/cialdini.md) for persuasion principles
+- **Alex Hormozi** → [references/hormozi.md](references/hormozi.md) for offers and pricing
+- **Neil Rackham** → [references/rackham.md](references/rackham.md) for discovery conversation
+- **Chris Voss** → [references/voss.md](references/voss.md) for negotiation tactics
+- **Oren Klaff** → [references/klaff.md](references/klaff.md) for frame control
+- **Eugene Schwartz** → [references/schwartz.md](references/schwartz.md) for copywriting
+
+### Load for IntuBlade-specific work:
+- [references/physician-founder-frame.md](references/physician-founder-frame.md)
+- [references/public-safety-buyer.md](references/public-safety-buyer.md)
+- [references/deployment-kit-psychology.md](references/deployment-kit-psychology.md)
 
 Load advisor reference files when deep-dive expertise on specific frameworks or tactics is needed.
