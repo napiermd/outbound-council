@@ -1,81 +1,288 @@
-# Company Configuration Template
+# Company Configuration
 
-Copy this file to `company/COMPANY.md` and fill it out.
-The `company/` directory is gitignored — your business details stay private.
+Copy this file to `company/COMPANY.md` and work through each section.
+Don't rush it. The quality of your outbound depends on how well you
+define your buyer, your offer, and your scoring criteria here.
 
 ```bash
 mkdir -p company
 cp company.md.template company/COMPANY.md
 ```
 
-Then edit `company/COMPANY.md` with your company's details.
+---
+
+## 1. Your Company
+
+**Name:**
+
+**Website:**
+
+**One-line pitch:** (If someone asked "what do you do?" at a bar, what would you say? Not your marketing tagline. The real answer.)
+
+**What you actually sell:** (Be specific. Not "we help companies do X better." What is the product? Physical device? Software? Service? What does it DO?)
+
+**Industry/vertical:**
+
+**How long have you been selling this?**
+
+**How many customers do you have today?** (Exact number. This becomes social proof in emails: "200+ agencies" or "50 enterprise customers.")
+
+**What's the one thing customers say after they buy?** (The reaction, not the feature. "I can't believe we waited this long" or "this replaced 3 tools" or "my team actually uses this one.")
 
 ---
 
-## Company
+## 2. Ideal Customer Profile
 
-**Name:**
-**Website:**
-**What you sell:** (one paragraph)
-**Industry:**
-**Competitor comparison:** (what does the alternative cost?)
+Don't describe everyone who COULD buy. Describe the customer where you win
+the fastest, with the least friction, and the highest lifetime value.
 
-## Buyer
+**Industry/segment:**
 
-**Who buys:** (title, role)
-**Awareness level:** (Schwartz 1-5. Most cold outreach targets are 1-2.)
-**Decision process:** (who approves, who influences, who signs)
+**Company size:** (employees, revenue, locations, units — whatever metric matters for your product)
 
-## Pricing tiers
+**Geography:** (specific regions, states, countries? Or everywhere?)
 
-| Tier | Criteria | Price | Label |
-|------|----------|-------|-------|
+**What problem do they have that your product solves?** (Not "they need better X." What's the actual pain? What breaks? What costs them money? What keeps the decision-maker up at night?)
+
+**What are they doing today instead of using your product?** (The status quo is your real competitor. Manual process? Spreadsheets? A competitor? Nothing at all?)
+
+**What triggers them to look for a solution?** (New hire? Audit failure? Growth? Compliance requirement? Budget approval? Incident?)
+
+**What disqualifies a prospect?** (List every reason a prospect should NOT be contacted)
+
+| Disqualification reason | How to identify |
+|------------------------|----------------|
+| Already a customer | |
+| Wrong segment (e.g., too small, wrong industry) | |
+| Uses a competitor with a long-term contract | |
+| No budget authority | |
+| Requested no contact | |
+| (add more) | |
+
+---
+
+## 3. The People You're Emailing
+
+For each role involved in the buying decision, fill out a row.
+Most B2B sales involve 2-4 people. Be specific.
+
+### Primary buyer (signs the check)
+
+**Title:**
+**What they care about:** (cost, risk, ROI, speed, compliance, team morale — what drives their decision?)
+**What they're afraid of:** (wasting budget, looking bad, choosing wrong, change management pain)
+**Where to find their email:** (company website staff page, LinkedIn, professional registry, industry directory)
+**How to verify their email:** (staff directory, domain pattern, professional profile)
+
+### Technical approver (says "this actually works")
+
+**Title:**
+**What they care about:** (specs, integration, reliability, support, clinical evidence, technical fit)
+**What they're afraid of:** (downtime, incompatibility, training burden, vendor lock-in)
+**Where to find their email:**
+
+### Influencer / end user (uses the product daily)
+
+**Title:**
+**What they care about:** (ease of use, daily workflow impact, training required)
+**Do you email them directly?** (yes/no — some products sell top-down, some bottom-up)
+
+### Other stakeholders
+
+(List anyone else who matters: procurement, legal, IT, operations manager, etc.)
+
+---
+
+## 4. Lead Scoring
+
+Define how you rank prospects so reps prioritize the right ones.
+
+### Scoring criteria
+
+| Factor | Weight | How to measure | Source |
+|--------|--------|---------------|--------|
+| Organization size | | (employees, units, revenue, locations) | (website, public filings, industry data) |
+| Annual volume | | (how many times they'd use your product/year) | (public data, industry averages) |
+| Budget signals | | (recent funding, grants, budget increases) | (news, government records) |
+| Technology fit | | (are they already using adjacent tools?) | (job postings, tech stack tools) |
+| Engagement signals | | (website visit, content download, event attendance) | (your analytics) |
+| Timing signals | | (contract renewal, new hire, audit, incident) | (news, job boards) |
+
+### Tier definitions
+
+| Tier | Label | Criteria | Priority |
+|------|-------|----------|----------|
+| 1 | | | Highest — founder handles these personally |
+| 2 | | | High — senior rep, bespoke research |
+| 3 | | | Standard — rep with council scoring |
+| 4 | | | Low — generic template, batch outreach |
+
+### Volume-to-tier formula
+
+How do you calculate which tier a prospect falls into?
+
+(Example: "EMS runs per year x 0.02 = estimated intubations. 200+ = Tier 2, 50-199 = Tier 3, under 50 = Tier 4.")
+
+Your formula:
+
+---
+
+## 5. Pricing
+
+**Pricing model:** (per unit, per seat, per month, annual contract, usage-based, flat fee)
+
+| Tier | Volume/criteria | Price | Annual value formula |
+|------|----------------|-------|---------------------|
 | 1 | | | |
 | 2 | | | |
 | 3 | | | |
+| 4 | | | |
 
-## Free offer / trial
+**What does the alternative cost?** (The thing they're using today. Be specific. "$4,000 reusable scope" not "expensive legacy solutions.")
 
-| Tier | What they get | Dollar value |
-|------|-------------|-------------|
-| | | |
+**Price objection response:** (When someone says "too expensive," what's the one-line reframe?)
 
-## Volume estimation
+---
 
-(How do you estimate a prospect's annual volume from public data?)
+## 6. The Offer
 
-## Credential line
+What do you give away to start the relationship? This is your foot in
+the door. The thing that makes them say yes before they commit to buying.
 
-(One sentence about the founder/company that earns expert authority.
-Not a pitch. A credential.)
+**What's the offer?** (Free trial, demo unit, assessment, consultation, sample, pilot program)
 
-## Links
+**What's included by tier?**
 
-- Calendar:
-- Demo/video:
-- Signature:
+| Tier | What they get for free | Dollar value to quote |
+|------|----------------------|----------------------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+| 4 | | |
 
-## Competitors
+**Why is this irresistible?** (Apply the Hormozi Value Equation)
+- Dream outcome:
+- Perceived likelihood of success:
+- Time to value:
+- Effort required from them:
 
-| Competitor | Price | Strength | Your differentiation |
-|-----------|-------|----------|---------------------|
-| | | | |
+**What happens after they try the offer?** (How does a free trial convert to a paid deal? Automatic? Follow-up? Usage threshold?)
 
-## Disqualification criteria
+---
 
-(When should a rep NOT email a prospect?)
+## 7. Credential and Authority
 
-## API integration (optional)
+**Founder/CEO name:**
+**Credential in one sentence:** (What earns expert authority? Not a pitch. "Board-certified EM physician and former Army combat medic" not "passionate entrepreneur disrupting healthcare.")
+**Signature block:** (Exact sign-off for emails)
 
-If you have a CRM API or lead database:
-- **Base URL:**
-- **Auth:** (env var name)
-- **Sync endpoint:**
-- **Update endpoint:**
+**Rotate these phrasings:** (Write 3-4 ways to say the credential line so
+emails in the same region don't pattern-match)
 
-## Company-specific references
+1.
+2.
+3.
+4.
 
-Add additional .md files to the `company/` directory for:
-- Founder/credential frame (see references/founder-frame.md.template)
-- Buyer psychology deep dive (see references/buyer-psychology.md.template)
-- Offer structure psychology (see references/offer-psychology.md.template)
+---
+
+## 8. Links and Assets
+
+| Asset | URL |
+|-------|-----|
+| Calendar booking | |
+| Product demo / video | |
+| One-pager or pitch deck | |
+| Case study | |
+| Website | |
+
+---
+
+## 9. Competitors
+
+| Competitor | Their price | Their strength | Why you win | When you lose |
+|-----------|------------|---------------|------------|--------------|
+| | | | | |
+| | | | | |
+| | | | | |
+
+**Positioning rule:** (How do you talk about competitors? "Different category, not a replacement" or "complementary" or "direct alternative at better price point")
+
+**What to NEVER say about competitors:**
+
+---
+
+## 10. Research Sources
+
+Where should Claude look to find information about prospects in your industry?
+
+| Data type | Primary source | Secondary source |
+|-----------|---------------|-----------------|
+| Organization info | | |
+| Decision-maker names | | |
+| Email addresses | | |
+| Technical approver | | |
+| Budget/funding | | |
+| Recent news/signals | | |
+| Industry registries | | |
+| Professional directories | | |
+| Government/public records | | |
+
+---
+
+## 11. Email Constraints
+
+**Subject line format:** (e.g., "[Product category] for [org name] - no cost")
+
+**Max word count:** (cold email should be under 150 words)
+
+**Must include:**
+- [ ] Calendar link
+- [ ] Demo/video link
+- [ ] Dollar value of free offer
+- [ ] (add your own)
+
+**Must NOT include:**
+- [ ] (e.g., clinical claims without citation, specific competitor names, pricing guarantees)
+
+---
+
+## 12. CRM Integration (optional)
+
+If you have a CRM API or lead database that Claude should sync to:
+
+**CRM platform:** (HubSpot, Salesforce, Pipedrive, etc.)
+
+**API base URL:**
+
+**Auth method:** (API key in .env, OAuth, etc.)
+
+**Env var name:** (e.g., SUPABASE_ANON_KEY, HUBSPOT_API_KEY)
+
+**Sync endpoint:** (create/update contacts)
+
+**Update endpoint:** (push status changes, notes)
+
+**Deal stages mapping:**
+
+| Your pipeline stage | CRM stage name |
+|--------------------|---------------|
+| Researched | |
+| Email sent | |
+| Reply received | |
+| Call booked | |
+| Trial/demo shipped | |
+| Closed won | |
+| Closed lost | |
+
+---
+
+## 13. Company-Specific References (optional)
+
+For deeper customization, add additional .md files to this `company/` directory:
+
+- **Founder frame** — how the founder's background changes the sale (see `references/founder-frame.md.template`)
+- **Buyer psychology** — deep dive on how your specific buyers think and buy (see `references/buyer-psychology.md.template`)
+- **Offer psychology** — how your free offer works as a sales tool (see `references/offer-psychology.md.template`)
+- **Regional playbooks** — state/region-specific knowledge for your industry
+- **Customer stories** — specific wins you can reference in outreach
