@@ -171,9 +171,8 @@ If the user says "I just want to explore" or "think with me", enter more convers
 - **Oren Klaff** → [references/klaff.md](references/klaff.md) for frame control
 - **Eugene Schwartz** → [references/schwartz.md](references/schwartz.md) for copywriting
 
-### Load for IntuBlade-specific work:
-- [references/physician-founder-frame.md](references/physician-founder-frame.md)
-- [references/public-safety-buyer.md](references/public-safety-buyer.md)
-- [references/deployment-kit-psychology.md](references/deployment-kit-psychology.md)
+### Load for company-specific work:
+- Check `company/` directory for company-specific references (founder frame, buyer psychology, offer structure)
+- Check `company/COMPANY.md` for product, pricing, buyer, and API details
 
 Load advisor reference files when deep-dive expertise on specific frameworks or tactics is needed.

@@ -1,0 +1,81 @@
+# Company Configuration Template
+
+Copy this file to `company/COMPANY.md` and fill it out.
+The `company/` directory is gitignored — your business details stay private.
+
+```bash
+mkdir -p company
+cp company.md.template company/COMPANY.md
+```
+
+Then edit `company/COMPANY.md` with your company's details.
+
+---
+
+## Company
+
+**Name:**
+**Website:**
+**What you sell:** (one paragraph)
+**Industry:**
+**Competitor comparison:** (what does the alternative cost?)
+
+## Buyer
+
+**Who buys:** (title, role)
+**Awareness level:** (Schwartz 1-5. Most cold outreach targets are 1-2.)
+**Decision process:** (who approves, who influences, who signs)
+
+## Pricing tiers
+
+| Tier | Criteria | Price | Label |
+|------|----------|-------|-------|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+
+## Free offer / trial
+
+| Tier | What they get | Dollar value |
+|------|-------------|-------------|
+| | | |
+
+## Volume estimation
+
+(How do you estimate a prospect's annual volume from public data?)
+
+## Credential line
+
+(One sentence about the founder/company that earns expert authority.
+Not a pitch. A credential.)
+
+## Links
+
+- Calendar:
+- Demo/video:
+- Signature:
+
+## Competitors
+
+| Competitor | Price | Strength | Your differentiation |
+|-----------|-------|----------|---------------------|
+| | | | |
+
+## Disqualification criteria
+
+(When should a rep NOT email a prospect?)
+
+## API integration (optional)
+
+If you have a CRM API or lead database:
+- **Base URL:**
+- **Auth:** (env var name)
+- **Sync endpoint:**
+- **Update endpoint:**
+
+## Company-specific references
+
+Add additional .md files to the `company/` directory for:
+- Founder/credential frame (see references/founder-frame.md.template)
+- Buyer psychology deep dive (see references/buyer-psychology.md.template)
+- Offer structure psychology (see references/offer-psychology.md.template)
