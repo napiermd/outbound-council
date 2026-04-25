@@ -36,11 +36,46 @@ Use it to answer:
 | Halle Tecco | fully source-backed | 2026-04-24 | 5 | Healthcare entrepreneurship writing, book, podcasts | `references/halle-tecco.md` |
 | Lisa Suennen | fully source-backed | 2026-04-24 | 5 | Venture Valkyrie, AHA, Tech Tonics/interviews | `references/lisa-suennen.md` |
 
+## Clinical airway council
+
+| Voice | Status | Reviewed | Source count | Primary source types | Profile |
+| --- | --- | --- | ---: | --- | --- |
+| Rich Levitan | fully source-backed | 2026-04-25 | 3 | Airway courses, AirwayCam, course materials | `references/rich-levitan.md` |
+| Scott Weingart | fully source-backed | 2026-04-25 | 3 | EMCrit, PubMed, airway QI material | `references/scott-weingart.md` |
+| George Kovacs | mostly source-backed | 2026-04-25 | 2 | AIME, professional profile | `references/george-kovacs.md` |
+| Jim DuCanto | fully source-backed | 2026-04-25 | 3 | SALAD, OpenAirway, EMCrit | `references/jim-ducanto.md` |
+| Peter Antevy | fully source-backed | 2026-04-25 | 4 | Handtevy, U.S. Eagles, podcast/profile material | `references/peter-antevy.md` |
+| Maia Dorsett | fully source-backed | 2026-04-25 | 4 | NAEMSP, PubMed, NREMT, EMS1 | `references/maia-dorsett.md` |
+
+## Buyer archetypes
+
+| Archetype | Evidence status | Reviewed | Profile |
+| --- | --- | --- | --- |
+| EMS Medical Director | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/ems-medical-director.md` |
+| Fire/EMS Chief | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/fire-ems-chief.md` |
+| EMS Training Officer / Educator | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/ems-training-officer-educator.md` |
+| ED Medical Director / Airway Lead | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/ed-medical-director-airway-lead.md` |
+| Anesthesia Chair / Chief CRNA | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/anesthesia-chair-chief-crna.md` |
+| Respiratory Therapy Director | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/respiratory-therapy-director.md` |
+| Value Analysis Director | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/value-analysis-director.md` |
+| Supply Chain / Procurement Lead | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/supply-chain-procurement-lead.md` |
+| Infection Prevention Lead | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/infection-prevention-lead.md` |
+| Simulation / Clinical Education Lead | Public research + field-note ready | 2026-04-25 | `buyer-archetypes/simulation-clinical-education-lead.md` |
+
+## Playbooks and competitive layer
+
+| Layer | Status | Reviewed | Source count | Profile |
+| --- | --- | --- | ---: | --- |
+| Market Access and Health Economics | source-backed domain playbook | 2026-04-25 | 5 | `playbooks/market-access-health-economics.md` |
+| Competitive Intelligence | source-backed competitor/substitute layer | 2026-04-25 | 8 profiles | `competitive/index.md` |
+| Field Signal Feedback Loop | template-backed, awaiting live field notes | 2026-04-25 | n/a | `field-signals/README.md` |
+
 ## Notes
 
 - `fully source-backed` means the profile includes explicit canonical sources, current signals, and operational distillation from primary or near-primary material.
 - `mostly source-backed` means there is enough reliable public material to use the voice, but recent signals or primary-source density are thinner.
 - `partially source-backed` means the person may still be useful, but the council should use the profile carefully and avoid overclaiming fidelity.
+- `field-note ready` means the profile is ready to absorb sanitized buyer signal, but should not be treated as interview-backed until those notes exist.
 
 ## Enrichment pointers
 
@@ -50,13 +85,14 @@ Use these with the source table:
 - `enrichment-matrix.md` ranks which profiles to deepen next.
 - `enrichment-protocol.md` explains how to turn books, podcasts, talks, essays, and social posts into council behavior.
 - `voice-extraction-template.md` is the working note format for mining a single source.
+- `launch-readiness-checklist.md` defines structural, scenario, and quality checks before major use.
 
 Current highest-priority enrichment targets after P0 extraction pass:
 
-1. Mark Roberge
-2. Halle Tecco
-3. Lisa Suennen
-4. Mark Copeland
-5. Omar Khateeb
-6. Zed Williamson
-7. Howie Chan
+1. Add field notes to buyer archetypes after real outbound/calls.
+2. Mine 2-3 extraction notes for the clinical airway council.
+3. Deepen competitor profiles with pricing/evidence details as deals require.
+4. Mark Roberge
+5. Halle Tecco
+6. Lisa Suennen
+7. Mark Copeland

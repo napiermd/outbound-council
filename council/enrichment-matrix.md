@@ -39,12 +39,22 @@ Use it as the roadmap for turning profiles into a high-fidelity GTM council.
 
 ## Near-term enrichment order
 
-1. Mark Roberge
-2. Halle Tecco
-3. Lisa Suennen
-4. Mark Copeland
-5. Omar Khateeb
-6. Zed Williamson
-7. Howie Chan
+1. Add live field signals to buyer archetypes from outbound replies, calls, demos, and win/loss reviews.
+2. Mine 2-3 extraction notes each for Rich Levitan, Scott Weingart, Jim DuCanto, Peter Antevy, and Maia Dorsett.
+3. Deepen competitive profiles with pricing, SKU, evidence, and customer-proof details as active deals require.
+4. Mark Roberge
+5. Halle Tecco
+6. Lisa Suennen
+7. Mark Copeland
 
-The original P0 voices plus Dunford, Dixon, Moesta, Makower, Wachter, Lochhead, McMahon, Nelson, Raskin, and Lemkin now have at least three extraction notes each and operational source-mined council behavior. The next pass should deepen sales-system scaling, healthcare founder/investor judgment, and optional exact-language refinements for the operational P1 medtech voices.
+The original P0 voices plus Dunford, Dixon, Moesta, Makower, Wachter, Lochhead, McMahon, Nelson, Raskin, and Lemkin now have at least three extraction notes each and operational source-mined council behavior. The council now also has buyer archetypes, clinical airway voices, a market-access playbook, competitive intelligence, and a field-signal loop. The next pass should turn live market signal into buyer-backed profiles.
+
+## Gap-closure layers
+
+| Layer | Current depth | Priority | Enrich next | Why it matters for IntuBlade |
+| --- | --- | --- | --- | --- |
+| Buyer archetypes | operational shell | P0 | Add sanitized field notes, direct buyer language, and repeated objection patterns. | Expert advice becomes much stronger when grounded in real EMS/hospital buyer language. |
+| Clinical airway council | source-backed | P1 | Mine source extractions and clinical scenario banks for each airway voice. | Keeps device, AI, and outbound claims clinically credible. |
+| Market access playbook | source-backed | P1 | Add IntuBlade-specific budget-impact model assumptions and value-dossier examples. | Value analysis requires economics, not just clinical enthusiasm. |
+| Competitive intelligence | source-backed | P1 | Add deal-specific competitor mentions, pricing, and evidence comparisons as field signal arrives. | Buyers compare IntuBlade against existing VL, DL, SGA, and capital workflows. |
+| Field signal loop | template-backed | P0 | Populate weekly from real replies, calls, demos, and win/loss reviews. | This is the path from 8/10 expert council to 9/10 live GTM operating system. |

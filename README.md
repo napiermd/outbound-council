@@ -7,6 +7,10 @@ This repo started as an outbound toolkit. It is now being rebuilt around actual 
 ## What you get
 
 - **A real-person GTM council**: April Dunford, Andy Raskin, Matt Dixon, John McMahon, Bob Moesta, Jason Lemkin, Omar Khateeb, Zed Williamson, Howie Chan, Josh Makower, and specialist extensions.
+- **Clinical airway council**: real emergency airway, EMS, and airway-education voices for clinical credibility and safety boundaries.
+- **Buyer archetypes**: EMS, hospital, value-analysis, procurement, infection-prevention, and education lenses that keep outputs grounded in buyer reality.
+- **Market access and competitive intelligence**: playbooks for economics, reimbursement discipline, value analysis, and competitor/substitute positioning.
+- **Field-signal loop**: templates for turning replies, calls, demos, objections, and win/loss reviews into council learning.
 - **Source-backed profiles**: each profile should point to books, podcasts, talks, essays, company material, or other primary/near-primary sources.
 - **Activation packs**: reusable voice sets for EMS outbound, hospital sales, founder-led GTM, and procedural-guidance AI.
 - **Company-specific context**: private `company/` files keep IntuBlade buyer psychology, founder frame, deployment kit, and pricing out of Git.
@@ -46,6 +50,17 @@ sales-council/
 │   ├── hospital-sales-pack.md
 │   ├── founder-led-gtm-pack.md
 │   └── procedural-guidance-ai-pack.md
+├── buyer-archetypes/
+│   ├── index.md
+│   └── ...
+├── competitive/
+│   ├── index.md
+│   └── ...
+├── playbooks/
+│   └── market-access-health-economics.md
+├── field-signals/
+│   ├── README.md
+│   └── templates
 ├── references/
 │   ├── april-dunford.md
 │   ├── john-mcmahon.md
@@ -79,12 +94,32 @@ sales-council/
 
 Specialist extensions include Mark Roberge, Christopher Lochhead, Mark Copeland, Scott Nelson, Bob Wachter, Halle Tecco, and Lisa Suennen.
 
+## Clinical Airway Council
+
+| Voice | Domain |
+| --- | --- |
+| Rich Levitan | Emergency airway technique and laryngoscopy education |
+| Scott Weingart | ED airway quality, critical care, and airway systems |
+| George Kovacs | AIME and multidisciplinary emergency airway education |
+| Jim DuCanto | SALAD and contaminated airway management |
+| Peter Antevy | EMS medical direction and EMS-first education |
+| Maia Dorsett | EMS airway education, standards, and QI |
+
+## Buyer, Economics, and Competitor Layers
+
+- `buyer-archetypes/` keeps the council grounded in the actual jobs, objections, and proof needs of EMS and hospital stakeholders.
+- `playbooks/market-access-health-economics.md` adds coding, coverage, payment, budget-impact, value-dossier, RWE, and adoption-economics discipline.
+- `competitive/` profiles help compare IntuBlade against Ambu, Verathon, Medtronic McGRATH, Karl Storz C-MAC, VividTrac, direct laryngoscopy, SGA-first strategies, and reusable-capital workflows.
+- `field-signals/` is the feedback loop for real replies, calls, demos, objections, and win/loss learning.
+
 ## Activation Packs
 
 - **EMS Outbound**: fire departments, EMS chiefs, medical directors, training officers, regional clusters.
 - **Hospital Sales**: health systems, value analysis, procurement, ED/anesthesia, enterprise pilots.
 - **Founder-Led GTM**: Andrew-led outreach, strategic narrative, conference follow-up, investor/customer story.
 - **Procedural Guidance AI**: software, QA/QI, computer vision, clinical AI, workflow adoption.
+
+Each pack now loads relevant buyer archetypes, clinical airway voices, market-access guidance, competitor profiles, and field signals when needed.
 
 ## Setup
 

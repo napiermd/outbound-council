@@ -15,6 +15,8 @@ Activate:
 
 - EMS/fire: April Dunford, Bob Moesta, Zed Williamson, Howie Chan, Matt Dixon
 - Hospital: John McMahon, Mark Copeland, Josh Makower, Bob Wachter, Lisa Suennen
+- Buyer archetype: load the closest buyer profile from `buyer-archetypes/`
+- Competitor/substitute: load the closest profile from `competitive/`
 
 Output:
 
@@ -23,6 +25,8 @@ Output:
 - buyer map
 - likely change trigger
 - pack-specific outreach angle
+- buyer-language risks
+- competitor/substitute frame if relevant
 
 ## Write EMS outbound
 
@@ -30,6 +34,8 @@ Load:
 
 - `packs/ems-outbound-pack.md`
 - `references/anti-ai-slop.md`
+- `buyer-archetypes/ems-medical-director.md`
+- `buyer-archetypes/fire-ems-chief.md` or `buyer-archetypes/ems-training-officer-educator.md`
 - active voice profiles
 - company founder-frame and buyer files
 
@@ -40,6 +46,8 @@ Voice jobs:
 - Zed Williamson: device-sales adoption blocker
 - Howie Chan: trust and memorability
 - Matt Dixon: reduce indecision and ask for a low-risk next step
+- Buyer archetype: make the note sound like EMS operations and medical oversight
+- Clinical airway voice when needed: keep airway claims credible and bounded
 
 Output:
 
@@ -48,12 +56,16 @@ Output:
 - email under 150 words
 - council scorecard
 - one reason it should get a reply
+- buyer-language score
 
 ## Review a hospital deal
 
 Load:
 
 - `packs/hospital-sales-pack.md`
+- `playbooks/market-access-health-economics.md`
+- relevant buyer archetypes
+- relevant `competitive/` profile
 - active voice profiles
 - any notes from the prospect conversation
 
@@ -64,6 +76,9 @@ Voice jobs:
 - Josh Makower: clinical need and workflow fit
 - Bob Wachter: hospital implementation realism
 - Lisa Suennen: market and business-model realism
+- Value Analysis Director: committee criteria and evidence burden
+- Supply Chain / Procurement Lead: vendor, SKU, stocking, and contract path
+- Market Access Playbook: economic case and value dossier
 
 Output:
 
@@ -73,6 +88,8 @@ Output:
 - evidence gap
 - next buyer commitment
 - kill/advance recommendation
+- value-analysis readiness
+- competitor/substitute response
 
 ## Build founder-led narrative
 
@@ -104,15 +121,18 @@ Load:
 
 - `packs/procedural-guidance-ai-pack.md`
 - AI/product materials if available
+- `playbooks/market-access-health-economics.md`
+- relevant buyer archetypes
 - active voice profiles
 
 Voice jobs:
 
 - Josh Makower: need-driven innovation
 - Bob Wachter: workflow and safety realism
+- Scott Weingart: airway quality, physiology, and QI realism
+- Maia Dorsett: EMS education, competency, and field QI
 - April Dunford: positioning beyond hardware
-- Matt Dixon: adoption and decision risk
-- Lisa Suennen: healthtech commercialization realism
+- Market Access Playbook: economic and evidence boundaries
 
 Output:
 
@@ -122,3 +142,35 @@ Output:
 - adoption risk
 - what not to claim yet
 
+## Review competitor positioning
+
+Load:
+
+- relevant `competitive/` profile
+- `playbooks/market-access-health-economics.md` if cost/value is involved
+- buyer archetype for the target stakeholder
+- April Dunford and Christopher Lochhead for category/positioning
+
+Output:
+
+- competitor's likely appeal
+- IntuBlade wedge
+- unsafe claims to avoid
+- outbound-safe comparison language
+- proof needed before stronger claims
+
+## Incorporate field signal
+
+Load:
+
+- `field-signals/README.md`
+- relevant field-signal template
+- affected buyer archetype
+- affected pack
+
+Output:
+
+- direct buyer language to preserve
+- inference to keep separate
+- profile or pack updates needed
+- next outbound/deal experiment

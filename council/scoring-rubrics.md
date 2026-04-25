@@ -48,3 +48,42 @@ Use 1-10 scores. Scores below 7 require revision. Scores below 5 mean the artifa
 | Hardware/software bridge | Shows why IntuBlade's device footprint creates a software advantage. |
 | Adoption path | Starts with a credible pilot, not a moonshot claim. |
 
+## Buyer-language review
+
+| Criterion | What good looks like |
+| --- | --- |
+| Role fit | Sounds like the stakeholder's actual job, constraints, and vocabulary. |
+| Trigger clarity | Names a situation that would make this buyer care now. |
+| Proof match | Asks for or offers the proof this buyer needs. |
+| Operational realism | Respects workflow, budget, training, and committee burden. |
+| Inference discipline | Separates direct buyer language from council guesses. |
+
+## Clinical-airway safety review
+
+| Criterion | What good looks like |
+| --- | --- |
+| Procedural realism | Accounts for positioning, oxygenation, suction, tube delivery, and stress. |
+| Evidence boundary | Does not imply unsupported outcomes or autonomy. |
+| Failure modes | Names contamination, lens failure, physiology, and backup plans when relevant. |
+| Training fit | Includes competency, deliberate practice, simulation, and debrief needs. |
+| Team workflow | Addresses EMS/ED/anesthesia/RT roles instead of only the intubator. |
+
+## Competitor-positioning review
+
+| Criterion | What good looks like |
+| --- | --- |
+| Competitor appeal | Accurately states why the buyer might prefer the incumbent or substitute. |
+| IntuBlade wedge | Names a specific gap IntuBlade can own. |
+| Claim safety | Avoids unsupported superiority, safety, infection, cost, or availability claims. |
+| Buyer relevance | Frames comparison around the buyer's workflow and adoption gate. |
+| Proof path | States what evidence would make the comparison stronger. |
+
+## Economic-case review
+
+| Criterion | What good looks like |
+| --- | --- |
+| Comparator clarity | Defines the current workflow/product/economic baseline. |
+| Budget-impact logic | Names cost drivers and assumptions without pretending they are proven. |
+| Value-analysis readiness | Includes clinical sponsor, economic sponsor, evidence, risk, and pilot criteria. |
+| Reimbursement discipline | Does not imply coding, coverage, or payment without support. |
+| Adoption gate | States the next decision: trial, VAC, contract, stocking, scale, or no-go. |

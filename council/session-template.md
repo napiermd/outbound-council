@@ -113,3 +113,89 @@ Revision:
 Ship decision:
 - ship / revise / do not send yet
 ```
+
+## Buyer-language review mode
+
+```text
+Situation: ...
+Artifact reviewed: ...
+Buyer archetypes loaded: ...
+Field signals loaded: ...
+
+Buyer-native score:
+- Language fit: <x/10>
+- Role relevance: <x/10>
+- Operational realism: <x/10>
+- Proof fit: <x/10>
+
+Direct buyer language used:
+- ...
+
+Buyer-language misses:
+- ...
+
+Rewrite:
+...
+```
+
+## Clinical-airway safety review mode
+
+```text
+Situation: ...
+Artifact reviewed: ...
+Clinical airway voices loaded: ...
+
+Safety and credibility checks:
+- Procedural realism: <x/10>
+- Evidence boundary: <x/10>
+- Training fit: <x/10>
+- Failure-mode coverage: <x/10>
+
+Claims to soften:
+- ...
+
+Clinical rewrite:
+...
+```
+
+## Competitor-positioning review mode
+
+```text
+Situation: ...
+Competitor/substitute: ...
+Buyer archetype: ...
+Competitive profile loaded: ...
+
+Competitor appeal:
+- ...
+
+IntuBlade wedge:
+- ...
+
+Unsafe comparison claims:
+- ...
+
+Outbound-safe language:
+...
+```
+
+## Economic-case review mode
+
+```text
+Situation: ...
+Artifact reviewed: ...
+Market access playbook loaded: yes / no
+Buyer archetypes loaded: ...
+
+Economic score:
+- Comparator clarity: <x/10>
+- Evidence fit: <x/10>
+- Budget-impact logic: <x/10>
+- Value-analysis readiness: <x/10>
+
+Missing assumptions:
+- ...
+
+Rewrite:
+...
+```
